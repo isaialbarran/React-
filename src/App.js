@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
+import './styles/App.css';
+import './styles/Body.css';
 
 class App extends Component {
+    constructor(){
+        super();
+        this.state = {
+            title: 'First App',
+            text: 'Just testing'
+        }
+    }
   render() {
+
     return (
       <div className="App">
+        <Header/>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            {this.state.text}
           </p>
           <a
             className="App-link"
@@ -17,12 +30,13 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            {this.state.title}
           </a>
         </header>
+        <Body/>
+        <Footer/>
       </div>
     );
   }
 }
-
 export default App;
